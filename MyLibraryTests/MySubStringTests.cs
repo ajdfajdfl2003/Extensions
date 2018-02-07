@@ -1,5 +1,4 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyLibrary;
 
@@ -8,6 +7,17 @@ namespace MyLibraryTests
     [TestClass]
     public class MySubStringTests
     {
+        [TestMethod]
+        public void GivenString_WhenSubstring_LenghOutOfRange_ShouldGetRightString()
+        {
+            var target = "我會超出長度喔";
+
+            var actual = target.MySubString(1, 8);
+
+            var expected = "會超出長度喔";
+            actual.Should().Be(expected);
+        }
+
         [TestMethod]
         public void GivenString_WhenSubstring_StartIndexOutOfRange_ShouldGetEmpty()
         {
