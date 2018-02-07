@@ -8,6 +8,16 @@ namespace MyLibraryTests
     public class MySubStringTests
     {
         [TestMethod]
+        public void GivenNullString_WhenSubString_ShouldGetStringEmpty()
+        {
+            string target = null;
+
+            var actual = target.MySubString(1, 8);
+
+            actual.Should().BeEmpty();
+        }
+
+        [TestMethod]
         public void GivenEmptystring_WhenSubString_ShouldGetStringEmpty()
         {
             var target = string.Empty;

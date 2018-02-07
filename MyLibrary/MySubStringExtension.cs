@@ -6,7 +6,7 @@ namespace MyLibrary
     {
         public static string MySubString(this string value, int startIndex, int length)
         {
-            return new string(value.Skip(startIndex).Take(length).ToArray());
+            return new string((value?? string.Empty).Skip(startIndex).Take(length).ToArray());
         }
     }
 }
