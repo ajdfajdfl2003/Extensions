@@ -8,6 +8,16 @@ namespace MyLibraryTests
     public class MySubStringTests
     {
         [TestMethod]
+        public void GivenEmptystring_WhenSubString_ShouldGetStringEmpty()
+        {
+            var target = string.Empty;
+
+            var actual = target.MySubString(1, 8);
+
+            actual.Should().BeEmpty();
+        }
+
+        [TestMethod]
         public void GivenString_WhenSubstring_LenghOutOfRange_ShouldGetRightString()
         {
             var target = "我會超出長度喔";
