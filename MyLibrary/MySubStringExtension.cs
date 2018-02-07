@@ -10,6 +10,7 @@ namespace MyLibrary
     {
         public static string MySubString(this string value, int startIndex, int length)
         {
+            if (startIndex >= value.Length) return string.Empty;
             return value.Substring(startIndex, length);
         }
     }
